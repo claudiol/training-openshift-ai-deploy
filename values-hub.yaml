@@ -16,7 +16,6 @@ clusterGroup:
     - redhat-ods-operator
         operatorGroup: true
         targetNamespaces:
-    - 
     - simple-openshift-ai
     - open-cluster-management
     - vault
