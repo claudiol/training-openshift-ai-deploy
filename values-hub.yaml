@@ -40,9 +40,9 @@ clusterGroup:
       source: redhat-operators
 
     elastic-search:
-      name: elasticesearch-operator
+      name: elasticsearch-eck-operator-certified
       source: certified-operators
-      channel: stable-5.8
+      channel: stable
 
     jaeger:
       name: jaeger-product
