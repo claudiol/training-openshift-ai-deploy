@@ -112,7 +112,7 @@ clusterGroup:
 
     openshift-simple-ai:
       name: simple-openshift-ai
-      path: chart/all/openshift-ai
+      path: charts/all/openshift-ai
       project: openshift-ai
       namespace: simple-openshift-ai
   imperative: {}
