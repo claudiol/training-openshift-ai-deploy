@@ -41,6 +41,7 @@ clusterGroup:
 
     elastic-search:
       name: elasticesearch-operator
+      source: certified-operators
       channel: stable-5.8
 
     jaeger:
