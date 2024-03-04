@@ -1,13 +1,28 @@
 clusterGroup:
   name: hub
   isHubCluster: true
+  # Namespaces that you want to create go here
+  # Checkout common/exampkles/values-examples.yaml
   namespaces:
+    - rhoai-demo-llm:
+        labels:
+          opendatahub.io/dashboard: 'true'
+        annotations:
+          openshift.io/description: 'RHOAI llm demo project'
+          openshift.io/display-name: rhoai-demo-llm
+    - openshift-operators-redhat
+    - openshift-distributed-tracing
+    - openshiff-serverless
     - redhat-ods-operator
-      operatorGroup: false
+        operatorGroup: true
+        targetNamespaces:
+    - 
     - simple-openshift-ai
     - open-cluster-management
     - vault
     - golang-external-secrets
+
+  # Subscriptions for operators go in this section
   subscriptions:
     acm:
       name: advanced-cluster-management
@@ -15,19 +30,44 @@ clusterGroup:
       channel: release-2.9
       #csv: advanced-cluster-management.v2.6.1
 
-    rhods-ai:
+    rhods:
       name: rhods-operator
-      channel: fast
+      channel: stable
 
     pipelines:
       name: openshift-pipelines-operator-rh
       source: redhat-operators
 
+    elastic-search:
+      name: elasticesearch-operator
+      namespace: openshift-operators-redhat
+
+    jaeger:
+      name: jaeger-product
+      namespace: openshift-distributed-tracing
+      channel: stable
+
+    kali:
+      name: kiali-ossm
+      namespace: openshift-operators
+      channel: stable
+
+    servicemesh:
+      name: servicemeshoperator
+      namespace: openshift-operators
+      channel: stable
+
+    serverless:
+      name: serverless-operator
+      namespace: openshift-serverless
+      channel: stable
+
+  # ArgoCD projects that you associate with Argocd Applications go here
   projects:
     - hub
     - data-science
-    - config-demo
-    - hello-world
+    - setup
+    - openshift-ai
 
   # Explicitly mention the cluster-state based overrides we plan to use for this pattern.
   # We can use self-referential variables because the chart calls the tpl function with these variables defined
