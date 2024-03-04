@@ -12,7 +12,9 @@ clusterGroup:
           openshift.io/display-name: rhoai-demo-llm
     - openshift-operators-redhat
     - openshift-distributed-tracing
-    - openshift-serverless
+    - openshift-serverless:
+        operatorGroup: true
+        targetNamespaces:
     - redhat-ods-operator:
         operatorGroup: true
         targetNamespaces:
