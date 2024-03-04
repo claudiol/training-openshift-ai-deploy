@@ -43,7 +43,6 @@ clusterGroup:
 
     jaeger:
       name: jaeger-product
-      namespace: openshift-distributed-tracing
       channel: stable
 
     kali:
