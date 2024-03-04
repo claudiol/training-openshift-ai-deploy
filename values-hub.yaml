@@ -39,6 +39,7 @@ clusterGroup:
 
     elastic-search:
       name: elasticesearch-operator
+      channel: stable-5.8
       namespace: openshift-operators-redhat
 
     jaeger:
