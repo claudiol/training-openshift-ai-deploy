@@ -120,7 +120,7 @@ clusterGroup:
       project: openshift-ai
       namespace: simple-openshift-ai
 
-    openshift-simple-ai:
+    openshift-ai-install:
       name: openshift-ai-llm
       path: charts/all/openshift-ai-deploy-llm
       project: openshift-ai
