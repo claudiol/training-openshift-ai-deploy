@@ -4,6 +4,7 @@ clusterGroup:
   # Namespaces that you want to create go here
   # Checkout common/exampkles/values-examples.yaml
   namespaces:
+    - openshift-ai-deploy-llm
     - rhoai-demo-llm:
         labels:
           opendatahub.io/dashboard: 'true'
@@ -118,6 +119,12 @@ clusterGroup:
       path: charts/all/openshift-ai
       project: openshift-ai
       namespace: simple-openshift-ai
+
+    openshift-simple-ai:
+      name: openshift-ai-llm
+      path: charts/all/openshift-ai-deploy-llm
+      project: openshift-ai
+      namespace: openshift-ai-deploy-llm
   imperative: {}
     # NOTE: We *must* use lists and not hashes. As hashes lose ordering once parsed by helm
     # The default schedule is every 10 minutes: imperative.schedule
