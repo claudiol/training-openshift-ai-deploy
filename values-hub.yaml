@@ -34,6 +34,7 @@ clusterGroup:
 
     rhods:
       name: rhods-operator
+      namespace: redhat-ods-operator
       channel: stable
 
     pipelines:
